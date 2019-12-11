@@ -9,8 +9,8 @@
  * Emailing error messages
  */
 function errHandler(
-        e,
-        func_name
+    e,
+    func_name
 ){
     var message  = e.message + '\n in file: ' + e.fileName + ' on line: ' + e.lineNumber;
     var sendto   = 'yehuda.tsimanis@gmail.com';
@@ -22,8 +22,8 @@ function errHandler(
  * Create a data base of all the names and contact details from a spreadsheet
  */
 function create_contacts_db(
-        ss, 
-        sheet_name
+    ss, 
+    sheet_name
 ) {
     var sheet      = ss.getSheetByName(sheet_name);
     var data_range = sheet.getDataRange();
@@ -55,8 +55,8 @@ function create_contacts_db(
  * Adding Email & SMS reminders
  */
 function set_notifications(
-        event,
-        min_before_a
+    event,
+    min_before_a
 ) {
     for (var idx=0; idx<min_before_a.length; idx++) {   
         event.addEmailReminder(min_before_a[idx]);
@@ -68,8 +68,8 @@ function set_notifications(
  * Create an event and set a value for an eventId
  */
 function create_event(
-        cal, 
-        event_h
+    cal, 
+    event_h
 ) {
     var new_event = cal.createAllDayEvent(event_h['parasha'], event_h['event_date'], event_h['event_opts']);
 
@@ -87,9 +87,9 @@ function create_event(
  * Comparison needs to be made on event object versus event object basis
  */
 function update_existing_event(
-        cal,
-        event_id,
-        event_h
+    cal,
+    event_id,
+    event_h
 ) {
     var existing_event = cal.getEventById(event_id);
 
